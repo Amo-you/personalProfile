@@ -32,4 +32,14 @@ navA.forEach((element) => {
     
   })
 })
-
+//右下置頂按鈕
+const topButton = document.getElementById('topButton')
+topButton.addEventListener('click', () => {
+  const goTo = topButton.dataset.to
+  const toDiv = '#' + goTo 
+  if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    $("html,body").animate({scrollTop:$(toDiv).offset().top - 300},0)
+  } else {
+    $("html,body").animate({scrollTop:$(toDiv).offset().top},0)
+  }
+})
