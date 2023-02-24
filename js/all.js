@@ -11,9 +11,19 @@ new Vue({
         this.focus = false
       }
     }
+})
+const navLinks = document.querySelectorAll('.nav-item')
+const menuToggle = document.getElementById('navBarBtn')
+navLinks.forEach((element) => {
+  element.addEventListener('click', () => { menuToggle.click() })
+})
+//解決手機錨點問題
+const navA = document.querySelectorAll('.nav-item a')
+navA.forEach((element) => {
+  element.addEventListener('click', ()=>{
+    const goTo = element.dataset.to
+    const toDiv = '#' + goTo
+      $("body,html").animate({scrollTop:$(toDiv).offset().top - 300},0)
   })
-  const navLinks = document.querySelectorAll('.nav-item')
-  const menuToggle = document.getElementById('navBarBtn')
-  navLinks.forEach((event) => {
-    event.addEventListener('click', () => { menuToggle.click() })
-  })
+})
+
