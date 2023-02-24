@@ -23,7 +23,7 @@ navA.forEach((element) => {
   element.addEventListener('click', ()=>{
     const goTo = element.dataset.to
     const toDiv = '#' + goTo
-      $("body,html").animate({scrollTop:$(toDiv).offset().top - 300},0)
+      $("html,body").animate({scrollTop:$(toDiv).offset().top - 300},0)
   })
 })
 
